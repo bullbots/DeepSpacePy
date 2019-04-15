@@ -2,7 +2,10 @@ from wpilib.command.command import Command
 
 from ctre._impl import ControlMode
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class Move(Command):
 
     def __init__(self, power):

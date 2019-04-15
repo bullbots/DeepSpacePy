@@ -2,7 +2,10 @@ from wpilib.command.command import Command
 
 from subsystems.intake_output import IntakeOutput
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class TakePanel(Command):
 
     def __init__(self):

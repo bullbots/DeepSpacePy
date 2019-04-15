@@ -10,7 +10,10 @@ from commands.move import Move
 
 from subsystems.intake_output import IntakeOutput
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class OneClimbG(CommandGroup):
 
     def __init__(self, liftPos=-27, elevatorPos=-19.5):

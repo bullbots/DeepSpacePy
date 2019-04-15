@@ -1,8 +1,8 @@
 import enum
-import logging
 
 from wpilib.command.subsystem import Subsystem
 from wpilib.doublesolenoid import DoubleSolenoid
+from wpilib.command.command import Command
 
 from ctre.wpi_talonsrx import WPI_TalonSRX
 from ctre.wpi_victorspx import WPI_VictorSPX
@@ -31,6 +31,8 @@ class IntakeOutput(Subsystem):
         self.setPosition(IntakeOutput.Position.UP)
         self.setPower(0)
 
+        self.mode = None  # This cannot be set here because the buttons do not yet exist.
+
     def initDefaultCommand(self):
         pass
 
@@ -40,7 +42,7 @@ class IntakeOutput(Subsystem):
         elif pos == IntakeOutput.Position.UP:
             self.intakeSolenoid.set(DoubleSolenoid.Value.kForward)
 
-    def setPower(self, power):
+    def setArmPower(self, power):
         self.leftIntakeTalon.set(-power)
         self.rightIntakeTalon.set(power)
 

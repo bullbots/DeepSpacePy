@@ -26,16 +26,6 @@ class OI(object):
         self.gamepad = Joystick(1)
 
         # Create Buttons
-        self.pad1 = JoystickButton(self.gamepad, 1)
-        self.pad2 = JoystickButton(self.gamepad, 2)
-        self.pad3 = JoystickButton(self.gamepad, 3)
-        self.pad4 = JoystickButton(self.gamepad, 4)
-        self.pad5 = JoystickButton(self.gamepad, 5)
-        self.pad6 = JoystickButton(self.gamepad, 6)
-        self.pad7 = JoystickButton(self.gamepad, 7)
-        self.pad8 = JoystickButton(self.gamepad, 8)
-        self.pad9 = JoystickButton(self.gamepad, 9)
-
         self.trigger = JoystickButton(self.stick, 1)
         self.button2 = JoystickButton(self.stick, 2)
         self.button3 = JoystickButton(self.stick, 3)
@@ -48,6 +38,16 @@ class OI(object):
         self.button10 = JoystickButton(self.stick, 10)
         self.button11 = JoystickButton(self.stick, 11)
 
+        self.pad1 = JoystickButton(self.gamepad, 1)
+        self.pad2 = JoystickButton(self.gamepad, 2)
+        self.pad3 = JoystickButton(self.gamepad, 3)
+        self.pad4 = JoystickButton(self.gamepad, 4)
+        self.pad5 = JoystickButton(self.gamepad, 5)
+        self.pad6 = JoystickButton(self.gamepad, 6)
+        self.pad7 = JoystickButton(self.gamepad, 7)
+        self.pad8 = JoystickButton(self.gamepad, 8)
+        self.pad9 = JoystickButton(self.gamepad, 9)
+
         self.climb2 = ComboButton(self.pad6, self.button6)
         self.climb3 = ComboButton(self.pad5, self.button6)
 
@@ -57,6 +57,7 @@ class OI(object):
         # Command hookups
         self.trigger.whenPressed(Intake())
         self.trigger.whenReleased(NeutralIntake())
+
         # self.button2.whileHeld(Align(3.0))
 
         self.button8.whenPressed(type('', (InstantCommand,),
@@ -64,6 +65,8 @@ class OI(object):
 
         self.pad1.whenPressed(SetObjectMode(IntakeOutput.BallOrHatchMode.HATCH))
         self.pad1.whenReleased(SetObjectMode(IntakeOutput.BallOrHatchMode.BALL))
+        Command.getRobot().intakeOutput.mode = IntakeOutput.BallOrHatchMode.HATCH if \
+            self.pad1.get() else IntakeOutput.BallOrHatchMode.HATCH
 
         self.test.whenPressed(TopConditional())
         self.pad3.whenPressed(MiddleConditional())

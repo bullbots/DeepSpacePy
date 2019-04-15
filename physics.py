@@ -18,7 +18,7 @@ class PhysicsEngine:
             # for key in hal_data["sparkmax-5"].keys():
             #     print(key)
         # Simulate the drivetrain
-        left_master_motor = hal_data["CAN"][1]["value"]
+        left_master_motor = -hal_data["CAN"][1]["value"]
         right_master_motor = hal_data["CAN"][3]["value"]
 
         speed, rotation = self.drivetrain.get_vector(left_master_motor, right_master_motor)

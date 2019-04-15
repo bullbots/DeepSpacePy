@@ -6,6 +6,10 @@ from commands.place_hatch_group import PlaceHatchG
 from subsystems.intake_output import IntakeOutput
 
 
+from commands.command_logging_decorator import logging_command
+
+
+@logging_command
 class LowConditional(ConditionalCommand):
 
     def __init__(self):

@@ -1,15 +1,15 @@
 from wpilib.command import Command
 import logging
+from commands.command_logging_decorator import logging_command
 
 
+@logging_command
 class JoystickDrive(Command):
 
     def __init__(self):
         super().__init__(subsystem=Command.getRobot().drivetrain)
-        self.logger = logging.getLogger(self.getName())
 
     def initialize(self):
-        self.logger.info("initialize")
         Command.getRobot().drivetrain.setPIDSlot(1)
 
     def execute(self):

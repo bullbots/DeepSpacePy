@@ -6,7 +6,10 @@ from commands.put_panel import PutPanel
 from commands.take_panel import TakePanel
 from constants import Constants
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class PlaceHatchG(CommandGroup):
 
     def __init__(self, desiredPos):

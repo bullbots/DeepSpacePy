@@ -92,10 +92,10 @@ class LiftElevator(Subsystem):
         return self.liftSpark.getOutputCurrent(), self.elevatorSpark.getOutputCurrent()
 
     def getLiftPos(self):
-        self.liftEncoder.getPosition()
+        return self.liftEncoder.getPosition()
 
     def getElevatorPos(self):
-        self.elevatorEncoder.getPosition()
+        return self.elevatorEncoder.getPosition()
 
     def getLiftElevatorPos(self):
         return self.getLiftPos(), self.getElevatorPos()

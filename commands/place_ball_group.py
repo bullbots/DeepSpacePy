@@ -6,7 +6,10 @@ from commands.inhale_exhale import InhaleExhale
 from subsystems.intake_output import IntakeOutput
 from constants import Constants
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class PlaceBallG(CommandGroup):
 
     def __init__(self, desiredPos):

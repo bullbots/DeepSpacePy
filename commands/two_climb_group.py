@@ -3,7 +3,10 @@ from wpilib.command.commandgroup import CommandGroup
 from commands.raise_lift_elevator import RaiseLiftElevator
 from commands.one_climb_group import OneClimbG
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class TwoClimbG(CommandGroup):
 
     def __init__(self):

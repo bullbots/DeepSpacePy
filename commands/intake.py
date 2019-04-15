@@ -5,7 +5,10 @@ from commands.ball_intake_group import BallIntakeG
 from commands.move_hatch_height import MoveHatchHeight
 from subsystems.intake_output import IntakeOutput
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class Intake(ConditionalCommand):
 
     def __init__(self):

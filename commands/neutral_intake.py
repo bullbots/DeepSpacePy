@@ -6,7 +6,10 @@ from commands.hatch_intake_group import HatchIntakeG
 
 from subsystems.intake_output import IntakeOutput
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class NeutralIntake(ConditionalCommand):
 
     def __init__(self):

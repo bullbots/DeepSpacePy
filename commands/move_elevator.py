@@ -1,6 +1,9 @@
 from wpilib.command import Command
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class MoveElevator(Command):
 
     def __init__(self, targetPos):

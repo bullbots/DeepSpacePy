@@ -6,6 +6,7 @@ from commandbased import CommandBasedRobot
 from wpilib.compressor import Compressor
 
 from commands.drivetobaseline import DelayedDriveToBaseLine
+from commands.drivetobaseline import DriveToBaseLine
 from subsystems.lift_elevator import LiftElevator
 from subsystems.drivetrain import DriveTrain
 from subsystems.intake_output import IntakeOutput
@@ -39,7 +40,8 @@ class DeepSpaceRobot(CommandBasedRobot):
         # Shuffleboard options
 
         # Autonomous commands
-        self.autonomousCommand = DelayedDriveToBaseLine()
+        # self.autonomousCommand = DelayedDriveToBaseLine()
+        self.autonomousCommand = DriveToBaseLine()
 
         """
         Since OI instantiates commands and commands need access to subsystems,

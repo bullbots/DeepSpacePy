@@ -6,7 +6,10 @@ from commands.take_panel import TakePanel
 
 from constants import Constants
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class HatchIntakeG(CommandGroup):
 
     def __init__(self):

@@ -8,7 +8,10 @@ from commands.put_panel import PutPanel
 
 from subsystems.intake_output import IntakeOutput
 
+from commands.command_logging_decorator import logging_command
 
+
+@logging_command
 class BallIntakeG(CommandGroup):
 
     def __init__(self):
