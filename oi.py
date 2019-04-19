@@ -78,7 +78,6 @@ class OI(object):
         self.pad7.whenPressed(MoveElevator(1))
         self.pad8.whenPressed(HighCenter())
 
-
     @property
     def driveStick(self):
         return self.stick

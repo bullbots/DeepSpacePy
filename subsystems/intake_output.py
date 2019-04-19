@@ -29,7 +29,7 @@ class IntakeOutput(Subsystem):
         self.rightIntakeTalon.configContinuousCurrentLimit(6, Constants.TIMEOUT_MS)
 
         self.setPosition(IntakeOutput.Position.UP)
-        self.setPower(0)
+        self.setArmPower(0)
 
         self.mode = None  # This cannot be set here because the buttons do not yet exist.
 

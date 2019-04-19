@@ -2,8 +2,7 @@ from wpilib.command.subsystem import Subsystem
 
 from ctre.wpi_talonsrx import WPI_TalonSRX
 
-from rev import CANSparkMax
-from rev._impl.autogen.sim_enums import MotorType, IdleMode, ControlType
+from rev import CANSparkMax, MotorType, IdleMode, ControlType
 
 from robotmap import RobotMap
 from constants import Constants
